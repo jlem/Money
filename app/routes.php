@@ -15,3 +15,6 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::resource('income', 'IncomeController');
+Route::resource('expense', 'ExpenseController');
