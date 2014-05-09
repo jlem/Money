@@ -1,6 +1,7 @@
 <?php
 
 use Money\Transaction\TransactionRepository;
+use Money\Transaction\TransactionFactory;
 
 class IncomeController extends BaseController
 {
@@ -16,9 +17,8 @@ class IncomeController extends BaseController
 
     public function index()
     {
-        $Transactions = $this->TransactionRepository->findAll();
+        $Transactions = $this->TransactionRepository->findIncome();
 
-        dd($Transactions);
         $this->layout->title = 'Transactions';
         $this->layout->content = View::make('transaction.index');
     }
